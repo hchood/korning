@@ -5,7 +5,7 @@ class CreateSales < ActiveRecord::Migration
       t.string :customer_and_account_no
       t.string :product_name
       t.date :sale_date
-      t.decimal :sale_amount
+      t.string :sale_amount
       t.integer :units_sold
       t.string :invoice_no
       t.string :invoice_frequency
