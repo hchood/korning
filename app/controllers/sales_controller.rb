@@ -2,7 +2,7 @@ class SalesController < ApplicationController
 
  # Displays sales within last 13 months
   def index
-    @sales = Sale.all.where('sale_date BETWEEN :start AND :end', start: 13.months.ago, end: Time.now)
+    @sales = Sale.sales_in_last_13_months
   end
 
   def show
