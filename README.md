@@ -10,15 +10,15 @@ TO DO:
 1. Create employees table - DONE
 
 2. Break up fields into individual fields
-      Employee: first, last, email
-      Customer: name, account number
+      Employee: first, last, email -DONE
+      Customer: name, account number - DONE
 
 3. Add associations b/w models
 
 4. Remove unnecessary columns from Sales (e.g. product_name)
 
 5. Create views (& controllers/actions) to display:
-      Employee list (employee inof must not be repeated)
+      Employee list (employee info must not be repeated)
       Customer list (Invoice freq should be listed with each customer? Ask about this - customers have more than one invoice freq)
       Product list
       Sales w/in last 3 months (or 13 mo -- sales are old; show date, amount, invoice no., units sold, price per unit)
