@@ -7,5 +7,6 @@ class EmployeesController < ApplicationController
   # show info for a single employee
   def show
     @employee = Employee.find(params[:id])
+    @sales = @employee.sales.order('sale_amount DESC')
   end
 end
