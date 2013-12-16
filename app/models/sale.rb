@@ -9,6 +9,10 @@ class Sale < ActiveRecord::Base
   end
 
   def price_per_unit
-    @sale_amount / @units_sold
+    self.sale_amount / self.units_sold
+  end
+
+  def formatted_unit_price
+    "$#{sprintf('%.2f', self.price_per_unit)}"
   end
 end
