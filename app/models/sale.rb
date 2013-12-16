@@ -15,4 +15,8 @@ class Sale < ActiveRecord::Base
   def formatted_unit_price
     "$#{sprintf('%.2f', self.price_per_unit)}"
   end
+
+  def formatted_sale_amount
+    "$#{sprintf('%.2f', self.sale_amount)}"
+  end
 end
