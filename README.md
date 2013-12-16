@@ -7,15 +7,17 @@ Normalization Challenge
 
 TO DO:
 
-1. Break up fields into individual fields
+1. Create employees table
+
+2. Break up fields into individual fields
       Employee: first, last, email
       Customer: name, account number
 
-2. Add associations b/w models
+3. Add associations b/w models
 
-3. Remove unnecessary columns from Sales (e.g. product_name)
+4. Remove unnecessary columns from Sales (e.g. product_name)
 
-4. Create views (& controllers/actions) to display:
+5. Create views (& controllers/actions) to display:
       Employee list (employee inof must not be repeated)
       Customer list (Invoice freq should be listed with each customer? Ask about this - customers have more than one invoice freq)
       Product list
