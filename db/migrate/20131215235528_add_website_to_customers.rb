@@ -1,6 +1,7 @@
 class AddWebsiteToCustomers < ActiveRecord::Migration
   def up
     add_column :customers, :website, :string
+    Customer.reset_column_information
     Customer.all.each do |customer|
       id = customer.id
       if id == 1

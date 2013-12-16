@@ -2,7 +2,7 @@ class AddAccountNoAndNameToCustomers < ActiveRecord::Migration
   def up
     add_column :customers, :account_no, :string
     add_column :customers, :name, :string
-
+    Customer.reset_column_information
     Customer.all.each do |customer|
       customer_info = customer.customer_and_account_no.split(' ')
       customer.update_attribute(:account_no, customer_info[1].gsub(/[()]/, ''))
