@@ -7,7 +7,7 @@ Normalization Challenge
 
 TO DO:
 
-1. Create employees table
+1. Create employees table - DONE
 
 2. Break up fields into individual fields
       Employee: first, last, email
