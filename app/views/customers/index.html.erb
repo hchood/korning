@@ -14,8 +14,12 @@
       <tr>
         <td><%= customer.name %></td>
         <td><%= customer.account_no %></td>
-        <td><%= customer.website %></td>
+        <td><%= link_to(customer.website, customer.website) %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<br>
+<%= link_to 'Employees', employees_path %><br>
+<%= link_to 'Sales', sales_path %><br>
+<%= link_to 'Products', products_path %>
