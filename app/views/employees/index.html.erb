@@ -14,8 +14,13 @@
       <tr>
         <td><%= employee.first_name %></td>
         <td><%= employee.last_name %></td>
-        <td><a href="mailto:<%= employee.email %>"><%= employee.email %></a></td>
+        <td><%= mail_to(employee.email) %></td>
+        <td><%= link_to 'Profile', employee_path(employee) %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<br>
+<%= link_to 'Customers', customers_path %><br>
+<%= link_to 'Sales', sales_path %><br>
+<%= link_to 'Products', products_path %>

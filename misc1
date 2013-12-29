@@ -1,0 +1,27 @@
+class DropCustomerAndAccountNoFromCustomers < ActiveRecord::Migration
+  def up
+    remove_column :customers, :customer_and_account_no
+  end
+
+  def down
+    add_column :customers, :customer_and_account_no, :string
+    Customer.all.each do |customer|
+      sale = Sale.find_by(customer_id: customer.id).first
+      customer.update_attribute(:customer_and_account_no, sale.customer_and_account_no)
+    end
+  end
+end
+
+class AddNullConstraintsToCustomers < ActiveRecord::Migration
+  def up
+    change_column :customers, :name, :string, null: false
+    change_column :customers, :account_no, :string, null: false
+  end
+
+  def down
+    change_column :customers, :name, :string
+    change_column :customers, :account_no, :string
+  end
+end
+
+DROPPED THese MIGRATIONs
