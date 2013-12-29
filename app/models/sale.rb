@@ -11,7 +11,7 @@ class Sale < ActiveRecord::Base
   has_many :invoices
 
   def self.sales_in_last_13_months
-    Sale.all.where('sale_date BETWEEN :start AND :end', start: 13.months.ago, end: Time.now)
+    Sale.all.where('sale_date BETWEEN :start AND :end', start: 13.months.ago, end: Time.now).order('sale_date DESC')
   end
 
   def price_per_unit
