@@ -1,4 +1,10 @@
 class Sale < ActiveRecord::Base
+  validates_presence_of :sale_date, :sale_amount, :units_sold, :invoice_frequency, :employee_id, :product_id, :customer_id
+  validates_numericality_of :sale_amount, greater_than: 0
+  # validates_format_of :sale_amount, with: /\A\d+\.\d{2}\z/
+  validates_format_of :units_sold, with: /\A\d+\z/
+  validates_inclusion_of :invoice_frequency, in: %w(Monthly Quarterly Once)
+
   belongs_to :employee
   belongs_to :customer
   belongs_to :product
@@ -18,5 +24,9 @@ class Sale < ActiveRecord::Base
 
   def formatted_sale_amount
     "$#{sprintf('%.2f', self.sale_amount)}"
+  end
+
+  def self.invoice_frequencies
+    ['Monthly', 'Quarterly', 'Once']
   end
 end
